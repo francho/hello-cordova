@@ -53,16 +53,40 @@ var app = {
     },
 
     myNotification: function () {
+
+        function callback() {
+            console.log('alert dimissed');
+        }
+
         navigator.notification.alert(
             'It works!',  // message
-            function () {
-                console.log('alert dimissed');
-            },         // callback
+            callback,         // callback
             '3...2...1',            // title
             ':)'                  // buttonName
         );
 
         var milliseconds = 1000;
-        navigator.notification.vibrate(milliseconds) ;
+        navigator.notification.vibrate(milliseconds);
+    },
+
+    myTakePhoto: function () {
+        function captureSuccess(mediaFiles) {
+            var canvasDiv = document.getElementById('canvas');
+
+            for (var i = 0, len = mediaFiles.length; i < len; i += 1) {
+                var img = new Image();
+                img.className = 'thumb';
+                img.src = mediaFiles[i].fullPath;
+
+                canvasDiv.appendChild(img);
+            }
+        }
+
+        function captureError() {
+
+        }
+
+        var options = { limit: 1 };
+        navigator.device.capture.captureImage(captureSuccess, captureError, options);
     }
 };
