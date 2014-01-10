@@ -1,4 +1,4 @@
 hello-cordova
 =============
 
-Experiments with cordova
+Experiments with http://cordova.apache.org
