@@ -47,6 +47,11 @@ var app = {
         console.log('Received Event: ' + id);
     },
 
+    onError: function (error) {
+        alert('code: ' + error.code + '\n' +
+            'message: ' + error.message + '\n');
+    },
+
     myAlert: function () {
         var phoneModel = device.model;
         alert(phoneModel);
@@ -78,15 +83,48 @@ var app = {
                 img.className = 'thumb';
                 img.src = mediaFiles[i].fullPath;
 
+                img.onclick = function () {
+                    alert('show photo');
+                    window.location = img.src;
+                }
+
                 canvasDiv.appendChild(img);
             }
         }
 
-        function captureError() {
+        var options = { limit: 1 };
+        navigator.device.capture.captureImage(captureSuccess, this.onError, options);
+    },
 
+    locationWatchId: null,
+    myLocation: function () {
+        function onLocationSuccess(position) {
+            var element = document.getElementById('geolocation');
+            element.innerHTML = 'Latitude: ' + position.coords.latitude + '<br />' +
+                'Longitude: ' + position.coords.longitude + '<br />' +
+                '<hr />' + element.innerHTML;
         }
 
-        var options = { limit: 1 };
-        navigator.device.capture.captureImage(captureSuccess, captureError, options);
+        function startWatchLocation() {
+            document.getElementById('geolocation').style.display='block';
+            var options = { timeout: 30000 };
+            this.locationWatchId = navigator.geolocation.watchPosition(onLocationSuccess, this.onError, options);
+            console.log("locationWatchId=" + this.locationWatchId);
+        }
+
+        function stopWatchLocation() {
+            document.getElementById('geolocation').style.display='none';
+            navigator.geolocation.clearWatch(this.locationWatchId);
+            this.locationWatchId = null;
+        }
+
+
+        console.log('current locationWatchId = ' + this.locationWatchId );
+        if(this.locationWatchId==null) {
+            startWatchLocation.call(this);
+        } else {
+            stopWatchLocation.call(this);
+        }
+
     }
 };

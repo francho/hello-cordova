@@ -50,7 +50,7 @@ body {
     background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
     position:absolute;             /* position in the center of the screen */
     left:50%;
-    top:50%;
+    top:20%;
     height:50px;                   /* text area height */
     width:225px;                   /* text area width */
     text-align:center;
@@ -108,7 +108,22 @@ h1 {
     50% { opacity: 0.4; }
     to { opacity: 1.0; }
 }
- 
+
+button {
+    top:140px;
+    left:0px;
+    width:100%;
+    min-height: 50px;
+
+    font-size: 2em;
+
+    text-align:center;
+    color:white;
+    background-color: #9aaab0;
+    border-right:1px solid black;
+    border-bottom:1px solid black;
+}
+
 .blink {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
@@ -117,4 +132,8 @@ h1 {
 .thumb {
     width: 80px;
     height: 60px;
+}
+
+#geolocation {
+    display: none;
 }
