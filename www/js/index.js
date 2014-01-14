@@ -47,15 +47,9 @@ var app = {
         console.log('Received Event: ' + id);
     },
 
-    onError: function (error) {
-        alert('code: ' + error.code + '\n' +
-            'message: ' + error.message + '\n');
-    },
 
-    myAlert: function () {
-        var phoneModel = device.model;
-        alert(phoneModel);
-    },
+
+
 
     myNotification: function () {
 

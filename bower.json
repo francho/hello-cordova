@@ -1,0 +1,23 @@
+{
+  "name": "hello-cordova",
+  "version": "0.0.0",
+  "homepage": "https://github.com/francho/hello-cordova",
+  "authors": [
+    "Francho"
+  ],
+  "description": "experiments with cordova",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "www/js/vendor/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.8",
+    "angular-touch": "~1.2.8",
+    "angular-route": "~1.2.8"
+  }
+}

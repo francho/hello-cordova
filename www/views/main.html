@@ -1,0 +1,18 @@
+<div class="app">
+    <h1>Apache Cordova</h1>
+    <div id="deviceready" class="blink">
+        <p ng-if="!cordovaReady" class="event listening">Connecting to Device</p>
+        <p ng-if="cordovaReady" class="event received">Device is Ready</p>
+    </div>
+
+    <button ng-click="myAlert()">alert</button>
+    <button ng-click="myNotification()">notification</button>
+    <button ng-click="myTakePhoto()">photo</button>
+    <button ng-click="myLocation()">location</button>
+    <div id="photos"></div>
+    <img class="thumb" ng-repeat="photo in photos" src="{{ photo }}">
+    <div id="geolocation">
+        <p class="blink" ng-if="myLocation">Watching geolocation...</p>
+        {{ myPosition }}
+    </div>
+</div>

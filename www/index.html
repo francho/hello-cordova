@@ -26,27 +26,16 @@
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Hello World</title>
     </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
+    <body ng-app="MyApp">
+        <div ng-view></div>
 
-            <button onclick="app.myAlert()">alert</button>
-            <button onclick="app.myNotification()">notification</button>
-            <button onclick="app.myTakePhoto()">photo</button>
-            <button onclick="app.myLocation()">location</button>
-            <div id="canvas"></div>
-            <div id="geolocation">
-                <p class="blink">Watching geolocation...</p>
-            </div>
-        </div>
         <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/vendor/components/angular/angular.min.js"></script>
+        <script type="text/javascript" src="js/vendor/components/angular-route/angular-route.min.js"></script>
+        <script type="text/javascript" src="js/vendor/components/angular-touch/angular-touch.min.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
         <script type="text/javascript">
-            app.initialize();
+            //app.initialize();
         </script>
     </body>
 </html>
