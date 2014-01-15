@@ -7,7 +7,7 @@ Experiments with http://cordova.apache.org
 Initial setup
 -------------
 
-After clone the repository you must run this script to install dependencies (you must have installed cordova and bower before)
+After clone the repository you must run this script to install dependencies (install cordova and bower before)
 
 ```
 #!/bin/sh
