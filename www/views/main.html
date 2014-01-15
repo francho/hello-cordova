@@ -11,8 +11,12 @@
     <button ng-click="myLocation()">location</button>
     <div id="photos"></div>
     <img class="thumb" ng-repeat="photo in photos" src="{{ photo }}">
-    <div id="geolocation">
-        <p class="blink" ng-if="myLocation">Watching geolocation...</p>
-        {{ myPosition }}
+    <div id="geolocation" ng-if="locationWatchId || positions">
+        <p class="blink" ng-if="locationWatchId">Watching geolocation...</p>
+        <div ng-repeat="position in positions">
+            Latitude: {{ position.latitude }}<br>
+            Longitude: {{ position.longitude }}
+            <hr/>
+        </div>
     </div>
 </div>
