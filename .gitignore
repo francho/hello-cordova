@@ -1,4 +1,5 @@
 platforms/*
+plugins/*
 atlassian-ide-plugin.xml
 npm-debug.log
 .idea
