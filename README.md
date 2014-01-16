@@ -16,14 +16,14 @@ After clone the repository you must run this script to install dependencies (ins
 
 cordova platform add android;
 
-cordova plugins install org.apache.cordova.file;
-cordova plugins install org.apache.cordova.media-capture;
-cordova plugins install org.apache.cordova.media;
-cordova plugins install org.apache.cordova.geolocation;
-cordova plugins install org.apache.cordova.device;
-cordova plugins install org.apache.cordova.camera;
-cordova plugins install org.apache.cordova.vibration;
-cordova plugins install org.apache.cordova.dialogs;
+cordova plugin add org.apache.cordova.file;
+cordova plugin add org.apache.cordova.media-capture;
+cordova plugin add org.apache.cordova.media;
+cordova plugin add org.apache.cordova.geolocation;
+cordova plugin add org.apache.cordova.device;
+cordova plugin add org.apache.cordova.camera;
+cordova plugin add org.apache.cordova.vibration;
+cordova plugin add org.apache.cordova.dialogs;
 
-bower install
+bower install 
 ```
